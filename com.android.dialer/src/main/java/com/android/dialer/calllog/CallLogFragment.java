@@ -40,7 +40,7 @@ import android.view.ViewGroup;
 
 import com.android.contacts.common.GeoUtil;
 import com.android.contacts.common.util.PermissionsUtil;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.list.ListsFragment;
 import com.android.dialer.util.EmptyLoader;
 import com.android.dialer.voicemail.VoicemailPlaybackPresenter;

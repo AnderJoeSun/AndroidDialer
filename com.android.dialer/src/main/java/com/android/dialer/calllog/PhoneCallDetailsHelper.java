@@ -34,7 +34,7 @@ import android.widget.TextView;
 import com.android.contacts.common.testing.NeededForTesting;
 import com.android.contacts.common.util.PhoneNumberHelper;
 import com.android.dialer.PhoneCallDetails;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.calllogcache.CallLogCache;
 import com.android.dialer.util.DialerUtils;
 

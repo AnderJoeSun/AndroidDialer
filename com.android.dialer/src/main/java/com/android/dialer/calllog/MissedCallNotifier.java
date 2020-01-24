@@ -30,7 +30,7 @@ import android.util.Log;
 import com.android.contacts.common.ContactsUtils;
 import com.android.contacts.common.util.PhoneNumberHelper;
 import com.android.dialer.DialtactsActivity;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.CallLogNotificationsHelper.NewCall;
 import com.android.dialer.contactinfo.ContactPhotoLoader;
 import com.android.dialer.compat.UserManagerCompat;

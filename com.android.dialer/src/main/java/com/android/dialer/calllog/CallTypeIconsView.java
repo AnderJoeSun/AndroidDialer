@@ -28,7 +28,7 @@ import android.view.View;
 
 import com.android.contacts.common.testing.NeededForTesting;
 import com.android.contacts.common.util.BitmapUtil;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.util.AppCompatConstants;
 import com.google.common.collect.Lists;
 

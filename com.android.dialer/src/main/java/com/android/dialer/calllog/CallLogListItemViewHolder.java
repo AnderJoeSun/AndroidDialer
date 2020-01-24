@@ -49,7 +49,7 @@ import com.android.contacts.common.dialog.CallSubjectDialog;
 import com.android.contacts.common.testing.NeededForTesting;
 import com.android.contacts.common.util.UriUtils;
 import com.android.dialer.DialtactsActivity;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.calllogcache.CallLogCache;
 import com.android.dialer.compat.FilteredNumberCompat;
 import com.android.dialer.database.FilteredNumberAsyncQueryHandler;

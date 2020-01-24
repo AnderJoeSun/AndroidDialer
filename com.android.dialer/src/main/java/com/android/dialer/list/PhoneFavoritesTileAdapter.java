@@ -45,7 +45,7 @@ import com.android.contacts.common.list.ContactEntry;
 import com.android.contacts.common.list.ContactTileAdapter.DisplayType;
 import com.android.contacts.common.list.ContactTileView;
 import com.android.contacts.common.preference.ContactsPreferences;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 
 import java.util.ArrayList;
 import java.util.Comparator;

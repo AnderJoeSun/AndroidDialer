@@ -1,31 +1,19 @@
 ## AndroidDialer
-google dialer for Android N
+A simpler Phone app for olders
 
-## Example screenshot below:
-![github](https://raw.githubusercontent.com/geniusgithub/AndroidDialer/master/storage/m1.jpg "github") 
-![github](https://github.com/geniusgithub/AndroidDialer/blob/master/storage/m2.jpg "github")  
+## Screenshots
+![github](https://github.com/AnderJoeSun/AndroidDialer/blob/master/storage/m3.jpg "github")  
 
-##APK DOWNLOAD
-* [AndroidDialer.apk](https://raw.githubusercontent.com/geniusgithub/AndroidDialer/master/storage/com.android.dialer.apk)
+## DEMO APK DOWNLOAD
+* [me.zhengnian.dialer-debug.apk](https://raw.githubusercontent.com/AnderJoeSun/AndroidDialer/master/storage/me.zhengnian.dialer-debug.apk)
 
-##LIB:
-* com.android.support:appcompat
-* com.android.support:appcompat:recycleview
-* com.android.support:appcompat:cardview
-* com.android.support:appcompat:design
-* com.android.support:support-v13
+## Runtime requirements
+Android 6.0 or higher
 
-##Run requirements
-Android OS 5.0 and up
-
-## Links
-cnblog:[http://www.cnblogs.com/lance2016/](http://www.cnblogs.com/lance2016/p/6107376.html)
+## Blog for Development
+[A simpler Phone app for olders](https:/zhengnian.me/2020/01/22/android.phone.app/)
  
-## Development
-If you think this article useful Nepal , please pay attention to me<br />
-Your support is my motivation, I will continue to strive to do better
-
-##License
+## License
 
      Copyright (C) 2016 The Android Open Source Project
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,4 +27,3 @@ Your support is my motivation, I will continue to strive to do better
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
-

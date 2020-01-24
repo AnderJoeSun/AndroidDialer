@@ -24,7 +24,7 @@ import android.util.Log;
 
 import com.android.dialer.PhoneCallDetails;
 import com.android.dialer.util.AppCompatConstants;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.calllogcache.CallLogCache;
 
 /**

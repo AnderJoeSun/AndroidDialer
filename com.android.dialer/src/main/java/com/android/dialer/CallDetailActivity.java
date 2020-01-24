@@ -67,6 +67,8 @@ import com.android.dialer.util.PhoneNumberUtil;
 import com.android.dialer.util.TelecomUtil;
 import com.android.incallui.Call.LogState;
 
+import me.zhengnian.dialer.R;
+
 /**
  * Displays the details of a specific call log entry.
  * <p>

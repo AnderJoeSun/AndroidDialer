@@ -76,8 +76,9 @@ import com.android.contacts.common.util.PhoneNumberFormatter;
 import com.android.contacts.common.util.StopWatch;
 import com.android.contacts.common.widget.FloatingActionButtonController;
 import com.android.dialer.DialtactsActivity;
+import com.android.dialer.DialpadActivity; // zhengnian.me
 import com.android.dialer.NeededForReflection;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.SpecialCharSequenceMgr;
 import com.android.dialer.calllog.PhoneAccountUtils;
 import com.android.dialer.util.DialerUtils;
@@ -147,7 +148,7 @@ public class DialpadFragment extends Fragment
         boolean onDialpadSpacerTouchWithEmptyQuery();
     }
 
-    private static final boolean DEBUG = DialtactsActivity.DEBUG;
+    private static final boolean DEBUG = DialtactsActivity.DEBUG || DialpadActivity.DEBUG; // zhengnian.me
 
     // This is the amount of screen the dialpad fragment takes up when fully displayed
     private static final float DIALPAD_SLIDE_FRACTION = 0.67f;
@@ -503,7 +504,7 @@ public class DialpadFragment extends Fragment
      */
     private void configureScreenFromIntent(Activity parent) {
         // If we were not invoked with a DIAL intent,
-        if (!(parent instanceof DialtactsActivity)) {
+        if (!(parent instanceof DialtactsActivity) || !(parent instanceof DialpadActivity)) { // zhengnian.me
             setStartedFromNewIntent(false);
             return;
         }
@@ -657,8 +658,18 @@ public class DialpadFragment extends Fragment
         Trace.beginSection(TAG + " onResume");
         super.onResume();
 
-        final DialtactsActivity activity = (DialtactsActivity) getActivity();
-        mDialpadQueryListener = activity;
+        // zhengnian.me ..start
+        DialtactsActivity dialtactsActivity = null;
+        DialpadActivity dialpadActivity = null;
+        Activity parent = getActivity();
+        if (parent instanceof DialtactsActivity) {
+        	dialtactsActivity = (DialtactsActivity)parent;
+        	mDialpadQueryListener = dialtactsActivity;
+        } else if (parent instanceof DialpadActivity) {
+        	dialpadActivity = (DialpadActivity)parent;
+        	mDialpadQueryListener = dialpadActivity;
+        }
+        // zhengnian.me ..end
 
         final StopWatch stopWatch = StopWatch.start("Dialpad.onResume");
 
@@ -668,7 +679,7 @@ public class DialpadFragment extends Fragment
 
         stopWatch.lap("qloc");
 
-        final ContentResolver contentResolver = activity.getContentResolver();
+        final ContentResolver contentResolver = parent.getContentResolver(); // zhengnian.me
 
         // retrieve the DTMF tone play back setting.
         mDTMFToneEnabled = Settings.System.getInt(contentResolver,
@@ -1015,7 +1026,14 @@ public class DialpadFragment extends Fragment
     }
 
     private void hideAndClearDialpad(boolean animate) {
-        ((DialtactsActivity) getActivity()).hideDialpadFragment(animate, true);
+    	// zhengnian.me ..start
+    	Activity parent = getActivity();
+        if (parent instanceof DialtactsActivity) {
+        	((DialtactsActivity)parent).hideDialpadFragment(animate, true);
+        } else if (parent instanceof DialpadActivity) {
+        	((DialpadActivity)parent).hideDialpadFragment(animate, true);
+        }
+    	// zhengnian.me ..end
     }
 
     public static class ErrorDialogFragment extends DialogFragment {
@@ -1633,16 +1651,23 @@ public class DialpadFragment extends Fragment
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        final DialtactsActivity activity = (DialtactsActivity) getActivity();
+//        final DialtactsActivity activity = (DialtactsActivity) getActivity(); // zhengnian.me
+        Activity parent = getActivity(); // zhengnian.me
         final DialpadView dialpadView = (DialpadView) getView().findViewById(R.id.dialpad_view);
-        if (activity == null) return;
+        if (parent == null) return;// zhengnian.me
         if (!hidden && !isDialpadChooserVisible()) {
             if (mAnimate) {
                 dialpadView.animateShow();
             }
             mFloatingActionButtonController.setVisible(false);
             mFloatingActionButtonController.scaleIn(mAnimate ? mDialpadSlideInDuration : 0);
-            activity.onDialpadShown();
+            // zhengnian.me ..start
+            if (parent instanceof DialtactsActivity) {
+            	((DialtactsActivity)parent).onDialpadShown();
+            } else if (parent instanceof DialpadActivity) {
+            	((DialpadActivity)parent).onDialpadShown();
+            }
+            // zhengnian.me ..end
             mDigits.requestFocus();
         }
         if (hidden) {

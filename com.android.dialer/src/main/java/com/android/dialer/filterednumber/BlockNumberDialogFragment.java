@@ -31,7 +31,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.android.contacts.common.util.ContactDisplayUtils;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.compat.FilteredNumberCompat;
 import com.android.dialer.database.FilteredNumberAsyncQueryHandler;
 import com.android.dialer.database.FilteredNumberAsyncQueryHandler.OnBlockNumberListener;

@@ -28,7 +28,7 @@ import android.util.Log;
 
 import com.android.contacts.common.GeoUtil;
 import com.android.contacts.common.lettertiles.LetterTileDrawable;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.ContactInfo;
 import com.android.dialer.calllog.ContactInfoHelper;
 import com.android.dialer.util.Assert;

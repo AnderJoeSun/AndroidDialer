@@ -42,7 +42,7 @@ import com.android.contacts.common.list.OnPhoneNumberPickerActionListener;
 import com.android.contacts.common.list.PhoneNumberPickerFragment;
 import com.android.contacts.common.util.PermissionsUtil;
 import com.android.contacts.common.util.ViewUtil;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.dialpad.DialpadFragment.ErrorDialogFragment;
 import com.android.dialer.util.DialerUtils;
 import com.android.dialer.util.IntentUtil;

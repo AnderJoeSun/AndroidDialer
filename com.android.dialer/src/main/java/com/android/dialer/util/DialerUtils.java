@@ -37,7 +37,7 @@ import android.widget.Toast;
 
 import com.android.contacts.common.ContactsUtils;
 import com.android.contacts.common.interactions.TouchPointManager;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 
 import java.util.Iterator;
 import java.util.List;

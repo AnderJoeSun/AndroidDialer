@@ -49,7 +49,7 @@ import com.android.contacts.common.Collapser;
 import com.android.contacts.common.Collapser.Collapsible;
 import com.android.contacts.common.MoreContactUtils;
 import com.android.contacts.common.util.ContactDisplayUtils;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.TransactionSafeActivity;
 import com.android.dialer.contact.ContactUpdateService;
 import com.android.dialer.util.IntentUtil;

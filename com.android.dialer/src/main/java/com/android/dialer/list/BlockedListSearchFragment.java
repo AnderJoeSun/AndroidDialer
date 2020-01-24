@@ -33,7 +33,7 @@ import android.widget.Toast;
 import com.android.contacts.common.GeoUtil;
 import com.android.contacts.common.list.ContactEntryListAdapter;
 import com.android.contacts.common.util.ContactDisplayUtils;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.database.FilteredNumberAsyncQueryHandler;
 import com.android.dialer.database.FilteredNumberAsyncQueryHandler.OnCheckBlockedListener;
 import com.android.dialer.filterednumber.BlockNumberDialogFragment;

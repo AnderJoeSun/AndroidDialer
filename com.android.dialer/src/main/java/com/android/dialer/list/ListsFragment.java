@@ -34,7 +34,7 @@ import android.view.ViewGroup;
 
 import com.android.contacts.common.list.ViewPagerTabs;
 import com.android.dialer.DialtactsActivity;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.CallLogFragment;
 import com.android.dialer.calllog.CallLogNotificationsHelper;
 import com.android.dialer.calllog.CallLogQueryHandler;
@@ -64,13 +64,16 @@ public class ListsFragment extends Fragment
     private static final boolean DEBUG = DialtactsActivity.DEBUG;
     private static final String TAG = "ListsFragment";
 
-    public static final int TAB_INDEX_SPEED_DIAL = 0;
-    public static final int TAB_INDEX_HISTORY = 1;
-    public static final int TAB_INDEX_ALL_CONTACTS = 2;
-    public static final int TAB_INDEX_VOICEMAIL = 3;
+     // zhengnian.me ..start
+    public static final int TAB_INDEX_HISTORY = 0;
+    public static final int TAB_INDEX_MISSED_CALLS = 1;
+    public static final int TAB_INDEX_VOICEMAIL = 2;
+    public static final int TAB_INDEX_ALL_CONTACTS = 3;
+    public static final int TAB_INDEX_SPEED_DIAL = 4;
 
-    public static final int TAB_COUNT_DEFAULT = 3;
-    public static final int TAB_COUNT_WITH_VOICEMAIL = 4;
+    public static final int TAB_COUNT_DEFAULT = 2;
+    public static final int TAB_COUNT_WITH_VOICEMAIL = 3;
+    // zhengnian.me ..end
 
     public interface HostInterface {
         public ActionBarController getActionBarController();
@@ -85,6 +88,7 @@ public class ListsFragment extends Fragment
 
     private SpeedDialFragment mSpeedDialFragment;
     private CallLogFragment mHistoryFragment;
+    private CallLogFragment mMissedCallsFragment; // zhengnian.me
     private AllContactsFragment mAllContactsFragment;
     private CallLogFragment mVoicemailFragment;
 
@@ -103,7 +107,8 @@ public class ListsFragment extends Fragment
     /**
      * The position of the currently selected tab.
      */
-    private int mTabIndex = TAB_INDEX_SPEED_DIAL;
+//    private int mTabIndex = TAB_INDEX_SPEED_DIAL; // zhengnian.me
+    private int mTabIndex = TAB_INDEX_HISTORY; // zhengnian.me
     private CallLogQueryHandler mCallLogQueryHandler;
 
     public class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -130,6 +135,9 @@ public class ListsFragment extends Fragment
                 case TAB_INDEX_HISTORY:
                     mHistoryFragment = new CallLogFragment(CallLogQueryHandler.CALL_TYPE_ALL);
                     return mHistoryFragment;
+                case TAB_INDEX_MISSED_CALLS: // zhengnian.me
+                	mMissedCallsFragment = new CallLogFragment(Calls.MISSED_TYPE);
+                    return mMissedCallsFragment;
                 case TAB_INDEX_ALL_CONTACTS:
                     mAllContactsFragment = new AllContactsFragment();
                     return mAllContactsFragment;
@@ -151,6 +159,8 @@ public class ListsFragment extends Fragment
                 mSpeedDialFragment = (SpeedDialFragment) fragment;
             } else if (fragment instanceof CallLogFragment && position == TAB_INDEX_HISTORY) {
                 mHistoryFragment = (CallLogFragment) fragment;
+            } else if (fragment instanceof CallLogFragment && position == TAB_INDEX_MISSED_CALLS) { // zhengnian.me
+            	mMissedCallsFragment = (CallLogFragment) fragment;
             } else if (fragment instanceof AllContactsFragment) {
                 mAllContactsFragment = (AllContactsFragment) fragment;
             } else if (fragment instanceof CallLogFragment && position == TAB_INDEX_VOICEMAIL) {
@@ -232,18 +242,20 @@ public class ListsFragment extends Fragment
         mViewPager.setAdapter(mViewPagerAdapter);
         mViewPager.setOffscreenPageLimit(TAB_COUNT_WITH_VOICEMAIL - 1);
         mViewPager.setOnPageChangeListener(this);
-        showTab(TAB_INDEX_SPEED_DIAL);
+        showTab(TAB_INDEX_HISTORY); // zhengnian.me
 
         mTabTitles = new String[TAB_COUNT_WITH_VOICEMAIL];
-        mTabTitles[TAB_INDEX_SPEED_DIAL] = getResources().getString(R.string.tab_speed_dial);
+//        mTabTitles[TAB_INDEX_SPEED_DIAL] = getResources().getString(R.string.tab_speed_dial); // zhengnian.me
         mTabTitles[TAB_INDEX_HISTORY] = getResources().getString(R.string.tab_history);
-        mTabTitles[TAB_INDEX_ALL_CONTACTS] = getResources().getString(R.string.tab_all_contacts);
+        mTabTitles[TAB_INDEX_MISSED_CALLS] = getResources().getString(R.string.tab_history); // zhengnian.me
+//        mTabTitles[TAB_INDEX_ALL_CONTACTS] = getResources().getString(R.string.tab_all_contacts); // zhengnian.me
         mTabTitles[TAB_INDEX_VOICEMAIL] = getResources().getString(R.string.tab_voicemail);
 
         mTabIcons = new int[TAB_COUNT_WITH_VOICEMAIL];
-        mTabIcons[TAB_INDEX_SPEED_DIAL] = R.drawable.ic_grade_24dp;
+//        mTabIcons[TAB_INDEX_SPEED_DIAL] = R.drawable.ic_grade_24dp; // zhengnian.me
         mTabIcons[TAB_INDEX_HISTORY] = R.drawable.ic_schedule_24dp;
-        mTabIcons[TAB_INDEX_ALL_CONTACTS] = R.drawable.ic_people_24dp;
+        mTabIcons[TAB_INDEX_MISSED_CALLS] = R.drawable.ic_report_24dp; // zhengnian.me
+//        mTabIcons[TAB_INDEX_ALL_CONTACTS] = R.drawable.ic_people_24dp; // zhengnian.me
         mTabIcons[TAB_INDEX_VOICEMAIL] = R.drawable.ic_voicemail_24dp;
 
         mViewPagerTabs = (ViewPagerTabs) parentView.findViewById(R.id.lists_pager_header);
@@ -464,6 +476,9 @@ public class ListsFragment extends Fragment
                 screenType = ScreenEvent.SPEED_DIAL;
                 break;
             case TAB_INDEX_HISTORY:
+                screenType = ScreenEvent.CALL_LOG;
+                break;
+            case TAB_INDEX_MISSED_CALLS: // zhengnian.me
                 screenType = ScreenEvent.CALL_LOG;
                 break;
             case TAB_INDEX_ALL_CONTACTS:

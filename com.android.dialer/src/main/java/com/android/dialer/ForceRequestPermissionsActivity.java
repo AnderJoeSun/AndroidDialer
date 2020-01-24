@@ -28,6 +28,7 @@ import com.android.contacts.common.util.PermissionsUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import me.zhengnian.dialer.R;
 
 @TargetApi(23)
 public class ForceRequestPermissionsActivity extends Activity {

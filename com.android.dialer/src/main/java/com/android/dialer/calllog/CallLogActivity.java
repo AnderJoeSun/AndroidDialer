@@ -33,7 +33,7 @@ import android.view.ViewGroup;
 import com.android.contacts.common.interactions.TouchPointManager;
 import com.android.contacts.common.list.ViewPagerTabs;
 import com.android.dialer.DialtactsActivity;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.StatisticsUtil;
 import com.android.dialer.TransactionSafeActivity;
 import com.android.dialer.logging.Logger;

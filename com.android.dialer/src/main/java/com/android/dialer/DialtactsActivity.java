@@ -98,6 +98,8 @@ import com.google.common.annotations.VisibleForTesting;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.zhengnian.dialer.R;
+
 /**
  * The dialer tab's title is 'phone', a more common name (see strings.xml).
  */
@@ -224,7 +226,7 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
      */
     private String mPendingSearchViewQuery;
 
-    private PopupMenu mOverflowMenu;
+//    private PopupMenu mOverflowMenu; // zhengnian.me
     private EditText mSearchView;
     private View mVoiceSearchButton;
 
@@ -421,7 +423,8 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
             @Override
             public void onSearchViewClicked() {
                 // Hide FAB, as the keyboard is shown.
-                mFloatingActionButtonController.scaleOut();
+//                mFloatingActionButtonController.scaleOut();
+            	mFloatingActionButtonController.setVisible(false); // zhengnian.me
             }
         });
 
@@ -438,8 +441,8 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
         ImageButton optionsMenuButton =
                 (ImageButton) searchEditTextLayout.findViewById(R.id.dialtacts_options_menu_button);
         optionsMenuButton.setOnClickListener(this);
-        mOverflowMenu = buildOptionsMenu(searchEditTextLayout);
-        optionsMenuButton.setOnTouchListener(mOverflowMenu.getDragToOpenListener());
+//        mOverflowMenu = buildOptionsMenu(searchEditTextLayout); // zhengnian.me
+//        optionsMenuButton.setOnTouchListener(mOverflowMenu.getDragToOpenListener()); // zhengnian.me
 
         // Add the favorites fragment but only if savedInstanceState is null. Otherwise the
         // fragment manager is responsible for recreating it.
@@ -485,10 +488,11 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
                             return;
                         }
                         observer.removeOnGlobalLayoutListener(this);
-                        int screenWidth = mParentLayout.getWidth();
-                        mFloatingActionButtonController.setScreenWidth(screenWidth);
-                        mFloatingActionButtonController.align(
-                                getFabAlignment(), false /* animate */);
+//                        int screenWidth = mParentLayout.getWidth();
+//                        mFloatingActionButtonController.setScreenWidth(screenWidth);
+//                        mFloatingActionButtonController.align(
+//                                getFabAlignment(), false /* animate */);
+                        mFloatingActionButtonController.setVisible(false); // zhengnian.me
                     }
                 });
 
@@ -539,7 +543,8 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
 
         prepareVoiceSearchButton();
         mDialerDatabaseHelper.startSmartDialUpdateThread();
-        mFloatingActionButtonController.align(getFabAlignment(), false /* animate */);
+//        mFloatingActionButtonController.align(getFabAlignment(), false /* animate */);
+        mFloatingActionButtonController.setVisible(false); // zhengnian.me
 
         if (Calls.CONTENT_TYPE.equals(getIntent().getType())) {
             // Externally specified extras take precedence to EXTRA_SHOW_TAB, which is only
@@ -651,9 +656,9 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
                 Toast.makeText(DialtactsActivity.this, R.string.voice_search_not_available,
                         Toast.LENGTH_SHORT).show();
             }
-        } else if (resId == R.id.dialtacts_options_menu_button) {
-            mOverflowMenu.show();
-        } else {
+        } /*else if (resId == R.id.dialtacts_options_menu_button) {
+            mOverflowMenu.show(); // zhengnian.me
+        } */else {
             Log.wtf(TAG, "Unexpected onClick event from " + view);
         }
     }
@@ -756,7 +761,8 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
         ft.commit();
 
         if (animate) {
-            mFloatingActionButtonController.scaleOut();
+//            mFloatingActionButtonController.scaleOut();
+            mFloatingActionButtonController.setVisible(false); // zhengnian.me
         } else {
             mFloatingActionButtonController.setVisible(false);
             maybeEnterSearchUi();
@@ -811,7 +817,8 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
 
         updateSearchFragmentPosition();
 
-        mFloatingActionButtonController.align(getFabAlignment(), animate);
+//        mFloatingActionButtonController.align(getFabAlignment(), animate);
+        mFloatingActionButtonController.setVisible(false); // zhengnian.me
         if (animate) {
             mDialpadFragment.getView().startAnimation(mSlideOut);
         } else {
@@ -838,7 +845,8 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
             ft.hide(mDialpadFragment);
             ft.commit();
         }
-        mFloatingActionButtonController.scaleIn(AnimUtils.NO_DELAY);
+//        mFloatingActionButtonController.scaleIn(AnimUtils.NO_DELAY);
+        mFloatingActionButtonController.setVisible(false); // zhengnian.me
     }
 
     private void updateSearchFragmentPosition() {
@@ -1029,7 +1037,8 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
         mInDialpadSearch = smartDialSearch;
         mInRegularSearch = !smartDialSearch;
 
-        mFloatingActionButtonController.scaleOut();
+//        mFloatingActionButtonController.scaleOut();
+        mFloatingActionButtonController.setVisible(false); // zhengnian.me
 
         SearchFragment fragment = (SearchFragment) getFragmentManager().findFragmentByTag(tag);
         if (animate) {
@@ -1098,7 +1107,8 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
         if (getFabAlignment() != FloatingActionButtonController.ALIGN_END) {
             mFloatingActionButtonController.setVisible(false);
         }
-        mFloatingActionButtonController.scaleIn(FAB_SCALE_IN_DELAY_MS);
+//        mFloatingActionButtonController.scaleIn(FAB_SCALE_IN_DELAY_MS);
+        mFloatingActionButtonController.setVisible(false); // zhengnian.me
         onPageScrolled(mListsFragment.getCurrentTabIndex(), 0 /* offset */, 0 /* pixelOffset */);
         onPageSelected(mListsFragment.getCurrentTabIndex());
 
@@ -1163,11 +1173,12 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
     }
 
     private void showFabInSearchUi() {
-        mFloatingActionButtonController.changeIcon(
-                getResources().getDrawable(R.drawable.fab_ic_dial),
-                getResources().getString(R.string.action_menu_dialpad_button));
-        mFloatingActionButtonController.align(getFabAlignment(), false /* animate */);
-        mFloatingActionButtonController.scaleIn(FAB_SCALE_IN_DELAY_MS);
+//        mFloatingActionButtonController.changeIcon(
+//                getResources().getDrawable(R.drawable.fab_ic_dial),
+//                getResources().getString(R.string.action_menu_dialpad_button));
+//        mFloatingActionButtonController.align(getFabAlignment(), false /* animate */);
+//        mFloatingActionButtonController.scaleIn(FAB_SCALE_IN_DELAY_MS);
+    	mFloatingActionButtonController.setVisible(false); // zhengnian.me
     }
 
     @Override
@@ -1336,11 +1347,14 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
         // is reversed and the ViewPager returns the left tab position during scroll.
         boolean isRtl = DialerUtils.isRtl();
         if (!isRtl && tabIndex == ListsFragment.TAB_INDEX_SPEED_DIAL && !mIsLandscape) {
-            mFloatingActionButtonController.onPageScrolled(positionOffset);
+//            mFloatingActionButtonController.onPageScrolled(positionOffset);
+        	mFloatingActionButtonController.setVisible(false); // zhengnian.me
         } else if (isRtl && tabIndex == ListsFragment.TAB_INDEX_HISTORY && !mIsLandscape) {
-            mFloatingActionButtonController.onPageScrolled(1 - positionOffset);
+//            mFloatingActionButtonController.onPageScrolled(1 - positionOffset);
+        	mFloatingActionButtonController.setVisible(false); // zhengnian.me
         } else if (tabIndex != ListsFragment.TAB_INDEX_SPEED_DIAL) {
-            mFloatingActionButtonController.onPageScrolled(1);
+//            mFloatingActionButtonController.onPageScrolled(1);
+            mFloatingActionButtonController.setVisible(false); // zhengnian.me
         }
     }
 
@@ -1350,13 +1364,15 @@ public class DialtactsActivity extends TransactionSafeActivity implements View.O
         int tabIndex = mListsFragment.getCurrentTabIndex();
         mPreviouslySelectedTabIndex = tabIndex;
         if (tabIndex == ListsFragment.TAB_INDEX_ALL_CONTACTS) {
-            mFloatingActionButtonController.changeIcon(
-                    getResources().getDrawable(R.drawable.ic_person_add_24dp),
-                    getResources().getString(R.string.search_shortcut_create_new_contact));
+//            mFloatingActionButtonController.changeIcon(
+//                    getResources().getDrawable(R.drawable.ic_person_add_24dp),
+//                    getResources().getString(R.string.search_shortcut_create_new_contact));
+        	mFloatingActionButtonController.setVisible(false); // zhengnian.me
         } else {
-            mFloatingActionButtonController.changeIcon(
-                    getResources().getDrawable(R.drawable.fab_ic_dial),
-                    getResources().getString(R.string.action_menu_dialpad_button));
+//            mFloatingActionButtonController.changeIcon(
+//                    getResources().getDrawable(R.drawable.fab_ic_dial),
+//                    getResources().getString(R.string.action_menu_dialpad_button));
+        	mFloatingActionButtonController.setVisible(false); // zhengnian.me
         }
     }
 

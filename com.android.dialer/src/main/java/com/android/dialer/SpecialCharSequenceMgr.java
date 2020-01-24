@@ -53,6 +53,8 @@ import com.android.dialer.util.TelecomUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.zhengnian.dialer.R;
+
 /**
  * Helper class to listen for some magic character sequences
  * that are handled specially by the dialer.

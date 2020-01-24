@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 27
+    buildToolsVersion "25"
 
     defaultConfig {
-        applicationId "com.android.dialer"
-        minSdkVersion 21
+        applicationId "me.zhengnian.dialer"
+        minSdkVersion 23
         targetSdkVersion 24
         versionCode 71
         versionName "7.1"
@@ -29,5 +29,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.2.0'
     compile 'com.android.support:design:24.2.0'
     compile 'com.android.support:support-v13:24.2.0'
-    compile 'com.umeng.analytics:analytics:latest.integration'
+    // compile 'com.umeng.analytics:analytics:latest.integration'
 }

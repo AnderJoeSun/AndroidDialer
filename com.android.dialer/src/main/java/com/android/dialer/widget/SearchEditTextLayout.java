@@ -28,7 +28,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.util.DialerUtils;
 import com.android.phone.common.animation.AnimUtils;
 
@@ -268,7 +268,8 @@ public class SearchEditTextLayout extends FrameLayout {
         mSearchIcon.setVisibility(collapsedViewVisibility);
         mCollapsedSearchBox.setVisibility(collapsedViewVisibility);
         mVoiceSearchButtonView.setVisibility(collapsedViewVisibility);
-        mOverflowButtonView.setVisibility(collapsedViewVisibility);
+//        mOverflowButtonView.setVisibility(collapsedViewVisibility);
+        mOverflowButtonView.setVisibility(View.GONE); // zhengnian.me
         mBackButtonView.setVisibility(expandedViewVisibility);
         // TODO: Prevents keyboard from jumping up in landscape mode after exiting the
         // SearchFragment when the query string is empty. More elegant fix?

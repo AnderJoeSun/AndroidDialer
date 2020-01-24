@@ -30,7 +30,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.CallLog.Calls;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.service.CachedNumberLookupService;
 import com.android.dialerbind.ObjectFactory;
 

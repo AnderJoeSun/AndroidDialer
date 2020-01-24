@@ -34,7 +34,7 @@ import android.util.Log;
 
 import com.android.contacts.common.GeoUtil;
 import com.android.contacts.common.util.PermissionsUtil;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.util.TelecomUtil;
 
 import java.util.ArrayList;

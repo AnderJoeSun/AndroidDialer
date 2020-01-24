@@ -18,7 +18,7 @@ package com.android.dialer.calllog;
 
 import android.content.res.Resources;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.util.AppCompatConstants;
 
 /**

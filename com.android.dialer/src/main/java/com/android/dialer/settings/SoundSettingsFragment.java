@@ -34,7 +34,7 @@ import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
 import com.android.contacts.common.compat.SdkVersionOverride;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.compat.SettingsCompat;
 import com.android.phone.common.util.SettingsUtil;
 

@@ -38,7 +38,7 @@ import android.widget.Toast;
 
 import com.android.common.io.MoreCloseables;
 import com.android.dialer.PhoneCallDetails;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.CallLogAsyncTaskUtil;
 
 import com.android.dialer.database.VoicemailArchiveContract;

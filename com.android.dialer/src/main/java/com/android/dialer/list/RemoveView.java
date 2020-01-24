@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 
 public class RemoveView extends FrameLayout {
 

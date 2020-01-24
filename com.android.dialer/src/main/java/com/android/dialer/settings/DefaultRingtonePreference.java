@@ -24,7 +24,7 @@ import android.preference.RingtonePreference;
 import android.util.AttributeSet;
 import android.widget.Toast;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.compat.SettingsCompat;
 
 /**

@@ -19,7 +19,7 @@ package com.android.dialer.settings;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 
 public class DisplayOptionsSettingsFragment extends PreferenceFragment {
 

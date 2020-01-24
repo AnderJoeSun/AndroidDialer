@@ -49,7 +49,7 @@ import com.android.contacts.common.preference.ContactsPreferences;
 import com.android.contacts.common.util.PermissionsUtil;
 import com.android.dialer.DialtactsActivity;
 import com.android.dialer.PhoneCallDetails;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.calllogcache.CallLogCache;
 import com.android.dialer.contactinfo.ContactInfoCache;
 import com.android.dialer.contactinfo.ContactInfoCache.OnContactInfoChangedListener;

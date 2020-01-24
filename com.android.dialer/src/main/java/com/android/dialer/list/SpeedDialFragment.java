@@ -52,7 +52,7 @@ import com.android.contacts.common.ContactTileLoaderFactory;
 import com.android.contacts.common.list.ContactTileView;
 import com.android.contacts.common.list.OnPhoneNumberPickerActionListener;
 import com.android.contacts.common.util.PermissionsUtil;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.widget.EmptyContentView;
 import com.android.incallui.Call.LogState;
 

@@ -27,7 +27,7 @@ import android.view.View;
 
 import com.android.contacts.common.GeoUtil;
 import com.android.dialer.DialtactsActivity;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.TransactionSafeActivity;
 import com.android.dialer.calllog.CallLogAdapter;
 import com.android.dialer.calllog.CallLogQueryHandler;

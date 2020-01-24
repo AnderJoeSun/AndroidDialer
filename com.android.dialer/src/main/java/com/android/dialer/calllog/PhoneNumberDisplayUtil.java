@@ -20,7 +20,7 @@ import android.content.Context;
 import android.provider.CallLog.Calls;
 import android.text.TextUtils;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.util.PhoneNumberUtil;
 
 /**

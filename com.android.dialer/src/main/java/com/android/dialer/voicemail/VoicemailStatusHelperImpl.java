@@ -29,7 +29,7 @@ import android.net.Uri;
 import android.provider.VoicemailContract.Status;
 
 import com.android.contacts.common.util.UriUtils;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 
 import java.util.ArrayList;
 import java.util.Collections;

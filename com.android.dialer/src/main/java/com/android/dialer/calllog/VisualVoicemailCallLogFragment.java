@@ -26,7 +26,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.list.ListsFragment;
 import com.android.dialer.voicemail.VoicemailPlaybackPresenter;
 

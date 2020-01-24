@@ -28,7 +28,7 @@ import android.widget.TextView;
 
 import com.android.contacts.common.CallUtil;
 import com.android.dialer.PhoneCallDetails;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.util.DialerUtils;
 import com.google.common.collect.Lists;
 

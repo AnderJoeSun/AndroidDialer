@@ -33,7 +33,7 @@ import android.view.ViewConfiguration;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.list.DragDropController.DragItemContainer;
 
 /**

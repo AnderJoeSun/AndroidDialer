@@ -39,7 +39,7 @@ import android.util.Log;
 import com.android.contacts.common.compat.CompatUtils;
 import com.android.contacts.common.util.PermissionsUtil;
 import com.android.contacts.common.util.StopWatch;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.database.FilteredNumberContract.FilteredNumberColumns;
 import com.android.dialer.database.VoicemailArchiveContract.VoicemailArchive;
 import com.android.dialer.dialpad.SmartDialNameMatcher;

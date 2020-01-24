@@ -21,7 +21,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.android.contacts.common.testing.NeededForTesting;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 
 /**
  * Generic ViewHolder class for a promo card with a primary and secondary action.

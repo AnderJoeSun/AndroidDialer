@@ -31,7 +31,7 @@ import com.android.contacts.common.util.PermissionsUtil;
 import com.android.dialer.dialpad.SmartDialCursorLoader;
 import com.android.dialer.logging.Logger;
 import com.android.dialer.logging.ScreenEvent;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.widget.EmptyContentView;
 import com.android.incallui.Call.LogState;
 

@@ -29,7 +29,7 @@ import android.os.Handler;
 import android.os.Vibrator;
 import android.view.View;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 
 /**
  * Animates the dial button on "emergency" phone numbers.

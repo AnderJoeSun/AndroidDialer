@@ -36,7 +36,7 @@ import android.widget.TextView;
 
 import com.android.contacts.common.lettertiles.LetterTileDrawable;
 import com.android.contacts.common.testing.NeededForTesting;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.compat.FilteredNumberCompat;
 import com.android.dialer.database.FilteredNumberContract;
 import com.android.dialer.filterednumber.BlockedNumbersMigrator.Listener;

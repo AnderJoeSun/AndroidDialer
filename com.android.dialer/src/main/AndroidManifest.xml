@@ -15,7 +15,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.dialer"
+    package="me.zhengnian.dialer"
     coreApp="true">
 
     <uses-sdk
@@ -60,32 +60,31 @@
     <uses-permission android:name="android.permission.STOP_APP_SWITCHES" />
 
     <application
-        android:name="DialerApplication"
+        android:name="com.android.dialer.DialerApplication"
         android:label="@string/applicationLabel"
         android:icon="@mipmap/ic_launcher_phone"
         android:hardwareAccelerated="true"
-        android:supportsRtl="true"
-        android:backupAgent='com.android.dialer.DialerBackupAgent'>
+        android:supportsRtl="true">
     <!--         android:usesCleartextTraffic="false"> remove by genius-->
 
-        <meta-data android:name="com.google.android.backup.api_key"
-            android:value="AEdPqrEAAAAIBXgtCEKQ6W0PXVnW-ZVia2KmlV2AxsTw3GjAeQ" />
+        <!-- <meta-data android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAIBXgtCEKQ6W0PXVnW-ZVia2KmlV2AxsTw3GjAeQ" /> -->
 
-        <meta-data
+        <!-- <meta-data
             android:name="UMENG_APPKEY"
             android:value="57a0a07167e58ef73a001dd6" >
         </meta-data>
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="Umeng" >
-        </meta-data>
+        </meta-data> -->
 
 
         <!-- The entrance point for Phone UI.
              stateAlwaysHidden is set to suppress keyboard show up on
              dialpad screen. -->
-        <activity android:name=".DialtactsActivity"
-            android:label="@string/launcherActivityLabel"
+        <activity android:name="com.android.dialer.DialtactsActivity"
+            android:label="@string/callHistoryIconLabel"
             android:theme="@style/DialtactsActivityTheme"
             android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"
@@ -150,9 +149,29 @@
                 android:name="com.android.keyguard.layout"
                 android:resource="@layout/keyguard_preview" />
         </activity>
+        
+        <!-- zhengnian.me ..start -->
+        <activity android:name="com.android.dialer.DialpadActivity"
+            android:label="@string/launcherDialpadActivityLabel"
+            android:theme="@style/DialtactsActivityTheme"
+            android:launchMode="singleTask"
+            android:clearTaskOnLaunch="true"
+            android:icon="@mipmap/ic_launcher_phone"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustNothing"
+            android:resizeableActivity="true"
+            android:exported="true"
+            android:directBootAware="true">
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+        <!-- zhengnian.me ..end -->
 
         <!--add by geniusgithub -->
-        <activity android:name=".ForceRequestPermissionsActivity"
+        <activity android:name="com.android.dialer.ForceRequestPermissionsActivity"
                   android:theme="@style/android:Theme.Material.Light"
                   android:configChanges="orientation|keyboardHidden|screenSize">
         </activity>
@@ -209,19 +228,19 @@
 
         <!-- Backwards compatibility: "Phone" from Gingerbread and earlier -->
         <activity-alias android:name="DialtactsActivity"
-            android:targetActivity=".DialtactsActivity"
+            android:targetActivity="com.android.dialer.DialtactsActivity"
             android:exported="true"
         />
 
         <!-- Backwards compatibility: "Call log" from Gingerbread and earlier -->
         <activity-alias android:name="RecentCallsListActivity"
-            android:targetActivity=".DialtactsActivity"
+            android:targetActivity="com.android.dialer.DialtactsActivity"
             android:exported="true"
         />
 
         <!-- Backwards compatibility: "Call log" from ICS -->
-        <activity-alias android:name=".activities.CallLogActivity"
-            android:targetActivity=".DialtactsActivity"
+        <activity-alias android:name="com.android.dialer.activities.CallLogActivity"
+            android:targetActivity="com.android.dialer.DialtactsActivity"
             android:exported="true"
         />
 
@@ -271,7 +290,7 @@
             android:exported="false"/>
         <!-- end vCard related -->
 
-        <receiver android:name=".calllog.CallLogReceiver">
+        <receiver android:name="com.android.dialer.calllog.CallLogReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.NEW_VOICEMAIL" />
                 <data
@@ -285,19 +304,19 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".interactions.UndemoteOutgoingCallReceiver">
+        <receiver android:name="com.android.dialer.interactions.UndemoteOutgoingCallReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name=".calllog.CallLogNotificationsService"
+            android:name="com.android.dialer.calllog.CallLogNotificationsService"
             android:directBootAware="true"
             android:exported="false"
         />
 
-        <receiver android:name=".calllog.MissedCallNotificationReceiver"
+        <receiver android:name="com.android.dialer.calllog.MissedCallNotificationReceiver"
             android:directBootAware="true">
             <intent-filter>
                 <action android:name="android.telecom.action.SHOW_MISSED_CALLS_NOTIFICATION" />
@@ -306,7 +325,7 @@
 
         <!-- Service to update a contact -->
         <service
-            android:name=".contact.ContactUpdateService"
+            android:name="com.android.dialer.contact.ContactUpdateService"
             android:exported="false" />
 
         <!-- Broadcast receiver that passively listens to location updates -->
@@ -349,8 +368,8 @@
             android:exported="false" />-->
 
         <provider
-            android:name=".database.FilteredNumberProvider"
-            android:authorities="com.android.dialer.database.filterednumberprovider"
+            android:name="com.android.dialer.database.FilteredNumberProvider"
+            android:authorities="me.zhengnian.dialer.database.filterednumberprovider"
             android:exported="false"
             android:multiprocess="false"
             />
@@ -366,8 +385,8 @@
         </provider>
 
         <provider
-            android:name=".database.VoicemailArchiveProvider"
-            android:authorities="com.android.dialer.database.voicemailarchiveprovider"
+            android:name="com.android.dialer.database.VoicemailArchiveProvider"
+            android:authorities="me.zhengnian.dialer.database.voicemailarchiveprovider"
             android:exported="false"
             android:multiprocess="false"
             />

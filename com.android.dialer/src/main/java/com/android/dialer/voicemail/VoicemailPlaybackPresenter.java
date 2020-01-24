@@ -35,7 +35,7 @@ import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.view.WindowManager.LayoutParams;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.CallLogAsyncTaskUtil;
 import com.android.dialer.util.AsyncTaskExecutor;
 import com.android.dialer.util.AsyncTaskExecutors;

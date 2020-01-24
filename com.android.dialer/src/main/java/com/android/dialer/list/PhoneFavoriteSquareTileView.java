@@ -26,7 +26,7 @@ import android.widget.TextView;
 
 import com.android.contacts.common.compat.CompatUtils;
 import com.android.contacts.common.list.ContactEntry;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 
 /**
  * Displays the contact's picture overlaid with their name and number type in a tile.

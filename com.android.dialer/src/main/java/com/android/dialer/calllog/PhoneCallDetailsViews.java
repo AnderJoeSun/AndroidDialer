@@ -21,7 +21,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 
 /**
  * Encapsulates the views that are used to display the details of a phone call in the call log.

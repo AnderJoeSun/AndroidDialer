@@ -62,6 +62,7 @@
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_overflow_menu"
             android:contentDescription="@string/action_menu_overflow_description"
+            android:visibility="gone"
             android:tint="@color/searchbox_icon_tint" />
 
     </LinearLayout>

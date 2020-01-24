@@ -30,7 +30,7 @@ import com.android.contacts.commonbind.analytics.AnalyticsUtil;
 import com.android.dialerbind.ObjectFactory;
 import com.android.incallui.Call.LogState;
 
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.logging.Logger;
 import com.android.dialer.logging.ScreenEvent;
 import com.android.dialer.service.CachedNumberLookupService;

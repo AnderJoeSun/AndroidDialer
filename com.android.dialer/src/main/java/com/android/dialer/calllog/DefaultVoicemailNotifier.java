@@ -40,7 +40,7 @@ import com.android.contacts.common.ContactsUtils;
 import com.android.contacts.common.compat.TelephonyManagerCompat;
 import com.android.contacts.common.util.ContactDisplayUtils;
 import com.android.dialer.DialtactsActivity;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.CallLogNotificationsHelper.NewCall;
 import com.android.dialer.filterednumber.FilteredNumbersUtil;
 import com.android.dialer.list.ListsFragment;

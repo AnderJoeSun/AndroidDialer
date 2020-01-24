@@ -29,6 +29,8 @@ import android.support.annotation.Nullable;
 import android.telecom.PhoneAccountHandle;
 import android.text.TextUtils;
 
+import me.zhengnian.dialer.R;
+
 /**
  * The details of a phone call to be shown in the UI.
  */

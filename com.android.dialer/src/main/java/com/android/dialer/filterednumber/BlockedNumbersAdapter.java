@@ -23,7 +23,7 @@ import android.view.View;
 
 import com.android.contacts.common.ContactPhotoManager;
 import com.android.contacts.common.GeoUtil;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.calllog.ContactInfoHelper;
 import com.android.dialer.database.FilteredNumberContract.FilteredNumberColumns;
 import com.android.dialer.logging.InteractionEvent;

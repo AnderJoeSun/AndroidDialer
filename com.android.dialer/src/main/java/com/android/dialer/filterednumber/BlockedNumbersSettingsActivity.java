@@ -30,7 +30,7 @@ import android.widget.Toast;
 import com.android.contacts.common.GeoUtil;
 import com.android.contacts.common.dialog.IndeterminateProgressDialog;
 import com.android.contacts.common.list.OnPhoneNumberPickerActionListener;
-import com.android.dialer.R;
+import me.zhengnian.dialer.R;
 import com.android.dialer.database.FilteredNumberAsyncQueryHandler;
 import com.android.dialer.list.BlockedListSearchAdapter;
 import com.android.dialer.list.OnListFragmentScrolledListener;
