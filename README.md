@@ -4,7 +4,7 @@ A simpler Phone app for olders
 ## Screenshots
 ![github](https://github.com/AnderJoeSun/AndroidDialer/blob/master/storage/m3.jpg "github")  
 
-## DEMO APK DOWNLOAD
+## Download demo APK
 * [me.zhengnian.dialer-debug.apk](https://raw.githubusercontent.com/AnderJoeSun/AndroidDialer/master/storage/me.zhengnian.dialer-debug.apk)
 
 ## Runtime requirements
