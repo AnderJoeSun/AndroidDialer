@@ -1,5 +1,6 @@
 ## AndroidDialer
-A simpler Phone app for olders
+A simpler Phone app for olders, can co-exists with or replace Phone of AOSP(com.android.phone).
+一款适合老年人使用极简电话应用，可以替代系统自带的电话应用。
 
 ## Screenshots
 ![github](https://github.com/AnderJoeSun/AndroidDialer/blob/master/storage/m3.jpg "github")  
