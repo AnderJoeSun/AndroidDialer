@@ -12,7 +12,7 @@ A simpler Phone app for olders, can co-exists with or replace Phone of AOSP(com.
 Android 6.0 or higher
 
 ## Blog for Development
-[A simpler Phone app for olders](https:/zhengnian.me/2020/01/22/android.phone.app/)
+[A simpler Phone app for olders](https://zhengnian.me/2020/01/22/android.phone.app/)
  
 ## License
 
